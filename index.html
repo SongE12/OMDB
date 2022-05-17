@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SE.OMDB</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js" integrity="sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.2/gsap.min.js" integrity="sha512-kVlGhj2qFy+KBCFuvjBJTGUMxbdqJKs4yK2jh0e0VPhWUPiPC87bzm4THmaaIee3Oj7j6sDpTTgm2EPPiESqBg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.2/ScrollToPlugin.min.js" integrity="sha512-+ttrmEd3X+83MZZiqXnhD8J9Thp89psMxpRhCwTDo412Vu9cjFPC8nxpoqz4Q0eRWYeCbWnFHvCLsiZ/jr52fA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="inner">
+      <a href="/" class="logo">
+        <img src="/static/images/logo.jpg" alt="우드스탁">
+        <h1>SE.OMDB</h1>
+      </a>
+    </div>
+  </header>
+
+
+  <!-- SEARCH_BAR -->
+  <section>
+    <div class="inner">
+      <div class="search_bar">
+        <input type="text" placeholder="영화제목을 입력하세요." />
+        <div class="material-icons">search</div>
+        <button class="search-btn">Click</button>
+      </div>
+    </div>
+  </section>
+  
+
+  <!-- LOADING -->
+  <section>
+    <div class="inner">
+      <img class="loading_1" src="" alt="">
+    </div>
+  </section>
+
+  <!-- SEARCH_CONTENTS & MOVIE NOT FOUND -->
+  <section>
+    <div class="inner">
+      <div class="search_contents">
+        <ul class="movies"></ul>
+      </div>
+
+      <div class="res">
+        <img src="/static/images/movie_not_found.jpg" alt="Movie not found!!">
+        <p>Movie Not Found !!</p> 
+      </div>
+    </div>
+  </section>
+
+
+  <!-- TO-TOP -->
+  <div id="to-top">
+    <div class="material-icons">arrow_upward</div>
+  </div>
+  
+
+</body>
+</html>
