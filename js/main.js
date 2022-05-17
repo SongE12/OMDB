@@ -19,7 +19,7 @@ searchBtnEl.addEventListener('click', async () => {
   moviesEl.innerHTML = '' // 초기화 먼저
   resEl.style.display = 'none' // 초기화 먼저
   load_1El.style.display = 'block' // none시킨 로딩이미지 다시 블록으로
-  load_1El.src = '/static/images/loading.gif' // 로딩이미지 띄우기
+  load_1El.src = './images/loading.gif' // 로딩이미지 띄우기
   setTimeout(function() {
     load_1El.style.display = 'none' // 로딩이미지 없애기
     response(res) 
@@ -38,7 +38,7 @@ async function getMovie(name, page) {
 
 function loading() {
   const loadEl = document.createElement('img')
-  loadEl.src = '/static/images/logo.jpg'
+  loadEl.src = './images/logo.jpg'
 
 }
 
@@ -54,7 +54,7 @@ function rederMovies(movies) {
     if ('N/A' !== movie.Poster) {
       posterEl.src = movie.Poster
     } else {
-      posterEl.src = '/static/images/xbox_img.png'
+      posterEl.src = './images/xbox_img.png'
     }
     yearEl.textContent = movie.Year
     moviesEl.append(movieEl)
@@ -70,7 +70,7 @@ function rederMovies(movies) {
         const liEl = document.createElement('li')
         const load_2El = document.createElement('img')
         load_2El.className = 'loading_2'
-        load_2El.src = '/static/images/loading.gif'
+        load_2El.src = './images/loading.gif'
         moviesEl.append(liEl)
         liEl.append(load_2El)
         setTimeout(function() {
@@ -101,7 +101,7 @@ async function moreMovies() {
     if ('N/A' !== movie.Poster) {
       posterEl.src = movie.Poster
     } else {
-      posterEl.src = '/static/images/xbox_img.png'
+      posterEl.src = './images/xbox_img.png'
     }
     yearEl.textContent = movie.Year
     moviesEl.append(movieEl)
@@ -114,7 +114,7 @@ async function moreMovies() {
       if (entry.intersectionRatio > 0) {
         const liEl = document.createElement('li')
         const load_2El = document.createElement('img')
-        load_2El.src = '/static/images/loading.gif'
+        load_2El.src = './images/loading.gif'
         load_2El.className = 'loading_2'
         moviesEl.append(liEl)
         liEl.append(load_2El)
