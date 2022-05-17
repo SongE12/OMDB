@@ -36,13 +36,6 @@ async function getMovie(name, page) {
 }
 
 
-function loading() {
-  const loadEl = document.createElement('img')
-  loadEl.src = './images/logo.jpg'
-
-}
-
-
 // 4. 가져온 영화정보 화면에 출력
 function rederMovies(movies) {
   movies.forEach(movie => {
