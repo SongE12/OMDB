@@ -45,8 +45,7 @@ module.exports = {
     }),
     new CopyPlugin({
       patterns: [
-        { from: 'static' },
-        { from: 'scss' , to: 'scss'},
+        { from: 'static' }
       ]
     })
   ],
