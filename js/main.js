@@ -9,8 +9,23 @@ const toTopEl = document.querySelector('#to-top');
 let resEl = document.querySelector('.res')
 let page = 0
 
+
 // 2. 클릭 이벤트
-searchBtnEl.addEventListener('click', async () => {
+searchBtnEl.addEventListener('click', () => {
+  searchMovie()
+})
+
+
+// 3. 엔터키 이벤트
+searchEl.addEventListener('keydown', function(key){
+  if (key.key === 'Enter') {
+    searchMovie()
+  }
+})
+
+
+// 4. 이벤트 후 검색함수 실행
+async function searchMovie() {
   page = 1
   const data = await getMovie(searchEl.value, page)
   const movies = data.Search
@@ -25,9 +40,10 @@ searchBtnEl.addEventListener('click', async () => {
     response(res) 
     rederMovies(movies)
   }, 2000)
-})
+}
 
-// 3. 영화정보 불러오기(비동기)
+
+// 5. 영화정보 불러오기(비동기)
 async function getMovie(name, page) {
   const {data} = await axios ({
     url: `https://www.omdbapi.com?apikey=7035c60c&s=${name}&page=${page}`
@@ -36,7 +52,7 @@ async function getMovie(name, page) {
 }
 
 
-// 4. 가져온 영화정보 화면에 출력
+// 6. 가져온 영화정보 화면에 출력
 function rederMovies(movies) {
   movies.forEach(movie => {
     const movieEl = document.createElement('li')
@@ -79,7 +95,8 @@ function rederMovies(movies) {
   io.observe(moviesEl.lastChild);
 }
 
-// 5. 마지막 <li> 발견시 next page 보여주기
+
+// 7. 마지막 <li> 발견시 next page 보여주기
 async function moreMovies() {
   try {
   page += 1
@@ -127,7 +144,7 @@ async function moreMovies() {
 }
 
 
-// 6. 검색결과가 없을시
+// 8. 검색결과가 없을시
 function response(res){
   if (res === 'False') {
     resEl.style.display = 'flex'
@@ -135,24 +152,9 @@ function response(res){
 }
 
 
-// 7. 버튼 클릭 시 스크롤 위로 
+// 9. 버튼 클릭 시 스크롤 위로 
 toTopEl.addEventListener('click', function () {
   gsap.to(window, .7, {
     scrollTo: 0
   });
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
