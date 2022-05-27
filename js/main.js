@@ -27,7 +27,7 @@ searchEl.addEventListener('keydown', function(key){
 // 4. 이벤트 후 검색함수 실행
 async function searchMovie() {
   page = 1
-  const data = await getMovie(searchEl.value, page)
+  const data = await getMovie(searchEl.value.trim(), page)
   const movies = data.Search
   const res = data.Response
   console.log(data)
