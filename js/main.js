@@ -38,7 +38,7 @@ async function searchMovie() {
   setTimeout(function() {
     load_1El.style.display = 'none' // 로딩이미지 없애기
     response(res) 
-    rederMovies(movies)
+    renderMovies(movies)
   }, 2000)
 }
 
@@ -53,7 +53,7 @@ async function getMovie(name, page) {
 
 
 // 6. 가져온 영화정보 화면에 출력
-function rederMovies(movies) {
+function renderMovies(movies) {
   movies.forEach(movie => {
     const movieEl = document.createElement('li')
     const titleEl = document.createElement('h2')
